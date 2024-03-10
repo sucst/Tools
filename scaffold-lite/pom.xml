@@ -6,7 +6,7 @@
     <groupId>io.github.fuzhengwei</groupId>
     <artifactId>ddd-scaffold-lite</artifactId>
     <version>1.0</version>
-    <packaging>maven-archetype</packaging>
+<!--    <packaging>maven-archetype</packaging>-->
 
     <name>ddd-scaffold-lite</name>
 
@@ -72,27 +72,27 @@
                         </goals>
                         <configuration>
                             <additionalparam>-Xdoclint:none</additionalparam>
-<!--                            <javadocExecutable>-->
-<!--                                /Library/Java/JavaVirtualMachines/jdk1.8.0_341.jdk/Contents/Home/bin/javadoc-->
-<!--                            </javadocExecutable>-->
+                            <javadocExecutable>
+                                /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/bin/javadoc
+                            </javadocExecutable>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                <version>1.5</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>sign-artifacts</id>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>sign</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
@@ -115,13 +115,19 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.3.1</version> <!-- 使用最新版本 -->
+                        <version>2.9.1</version> <!-- 使用最新版本 -->
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
                                 <goals>
                                     <goal>jar</goal> <!-- 绑定到 jar 目标 -->
                                 </goals>
+                                <configuration>
+                                    <additionalparam>-Xdoclint:none</additionalparam>
+                                    <javadocExecutable>
+                                        /Library/Java/JavaVirtualMachines/jdk1.8.0_311.jdk/Contents/Home/bin/javadoc
+                                    </javadocExecutable>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
