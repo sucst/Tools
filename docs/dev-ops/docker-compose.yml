@@ -74,7 +74,7 @@ services:
       redis:
         condition: service_healthy
 
-  # Redis - ./redis/users.acl:/usr/local/etc/redis/users.acl
+  # 配置密码的情况下，volumes 添加 ./redis/users.acl:/usr/local/etc/redis/users.acl redis.conf 需要补充 aclfile /usr/local/etc/redis/users.acl
   redis:
     image: redis:7.2.0
     container_name: redis
